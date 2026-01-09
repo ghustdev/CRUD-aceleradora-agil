@@ -84,10 +84,10 @@ app.get('/products/list', (req, res) => {
     console.log("\nBusca realizada!");
 });
 
-// 3. Buscar produto pelo ID
+// 3. Buscar produto específico pelo ID ou Nome
 app.get('/products/search/:id', (req, res) => {
     const db = lerDados();
-    const product = db.find(item => item.id === req.params.id);
+    const product = db.find(item => item.id == req.params.id);
 
     if (!product) return res.status(404).json({ erro: 'Produto não encontrado' });
 

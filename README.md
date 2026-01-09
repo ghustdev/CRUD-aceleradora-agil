@@ -1,4 +1,4 @@
-# 📦 CRUD Aceleradora Ágil
+# 📦 CRUD Aceleradora Ágil - AgilStore
 
 > **Desafio:** Construir um CRUD em JavaScript e Node.js para a 2ª etapa do processo seletivo da Aceleradora Ágil da PUCRS
 
@@ -13,6 +13,7 @@ Uma API RESTful robusta desenvolvida com **Node.js** e **Express**, utilizando p
 - 🛡️ **Validação de Dados:** Verificação de campos obrigatórios
 - 📊 **Respostas Padronizadas:** Status HTTP apropriados e mensagens de erro claras
 - 🔄 **Hot Reload:** Reinicialização automática durante desenvolvimento
+- 🖥️ **Interface CLI:** Terminal interativo para gerenciamento completo
 
 ## 🛠️ Stack Tecnológica
 
@@ -21,6 +22,13 @@ Uma API RESTful robusta desenvolvida com **Node.js** e **Express**, utilizando p
 - **Módulos:** ES Modules (`import`/`export`)
 - **Persistência:** File System nativo (fs)
 - **Dev Tools:** Nodemon para desenvolvimento
+- **CLI:** Readline/promises para interface interativa
+
+![alt text](/images/image.png)
+
+![alt text](/images/code.png)
+
+![alt text](/images/insomnia.png)
 
 ## 🚀 Início Rápido
 
@@ -51,22 +59,85 @@ Uma API RESTful robusta desenvolvida com **Node.js** e **Express**, utilizando p
    npm start
    ```
 
-4. **Acesse a API:**
-   - URL base: `http://localhost:3000`
-   - Status: `GET http://localhost:3000/`
+4. **Acesse a aplicação:**
+   - **API REST:** `http://localhost:3000`
+   - **CLI Interativa:** `npm run cli` (em outro terminal)
 
 ## 📁 Estrutura do Projeto
 
 ```
 CRUD-aceleradora-agil/
-├── server.js           # Servidor principal da API
+├── server.js           # Servidor principal da API REST
+├── app.js              # Interface CLI interativa
 ├── products_db.json    # Banco de dados JSON (criado automaticamente)
 ├── package.json        # Configurações e dependências
 ├── README.md          # Documentação
 └── .gitignore         # Arquivos ignorados pelo Git
 ```
 
-## 📖 Documentação da API
+## 🖥️ Interface CLI (Recomendada)
+
+### Como Usar a CLI
+
+1. **Inicie o servidor da API:**
+   ```bash
+   npm run dev
+   ```
+
+2. **Em outro terminal, execute a CLI:**
+   ```bash
+   npm run cli
+   ```
+
+### Funcionalidades da CLI
+
+```
+========================================
+   AGILSTORE - CONTROLE DE ESTOQUE
+========================================
+
+1. Listar todos os produtos
+2. Adicionar novo produto
+3. Atualizar dados/estoque
+4. Excluir produto
+5. Buscar produto específico
+0. Sair
+```
+
+#### 📋 **1. Listar Produtos**
+- Lista todos os produtos em formato de tabela
+- Permite filtrar por nome ou categoria
+- Pressione ENTER vazio para listar todos
+
+#### ➕ **2. Adicionar Produto**
+- Interface guiada para cadastro
+- Validação automática de campos
+- Confirmação visual de sucesso
+
+#### ✏️ **3. Atualizar Produto**
+- Mostra lista atual para facilitar seleção
+- Permite atualizar campos específicos
+- Mantém valores existentes se deixar em branco
+
+#### 🗑️ **4. Excluir Produto**
+- Lista produtos antes da exclusão
+- Confirmação de segurança obrigatória
+- Feedback claro sobre o resultado
+
+#### 🔍 **5. Buscar Específico**
+- Busca por ID exato
+- Exibe resultado em formato tabular
+- Tratamento de erros amigável
+
+### Vantagens da CLI
+
+- ✅ **Interface Amigável:** Menu intuitivo e navegação simples
+- ✅ **Validação Visual:** Feedback imediato com emojis e cores
+- ✅ **Confirmações de Segurança:** Evita exclusões acidentais
+- ✅ **Formatação Tabular:** Visualização clara dos dados
+- ✅ **Tratamento de Erros:** Mensagens claras e orientativas
+
+## 📖 Documentação da API REST
 
 ### Base URL
 ```
@@ -203,9 +274,23 @@ DELETE /products/delete/:id
 }
 ```
 
-## 🧪 Testando a API
+## 🧪 Testando a Aplicação
 
-### Via cURL (Terminal)
+### 🖥️ Via CLI (Recomendado)
+
+A forma mais fácil de testar todas as funcionalidades:
+
+```bash
+# Terminal 1: Inicie a API
+npm run dev
+
+# Terminal 2: Execute a CLI
+npm run cli
+```
+
+A CLI oferece uma interface completa e intuitiva para todas as operações CRUD.
+
+### 🌐 Via cURL (Testes da API)
 
 **1. Verificar status:**
 ```bash
@@ -262,11 +347,14 @@ Recomendamos usar:
 ## 🔧 Scripts Disponíveis
 
 ```bash
-# Desenvolvimento (com hot reload)
+# Desenvolvimento da API (com hot reload)
 npm run dev
 
-# Produção
+# Produção da API
 npm start
+
+# Interface CLI interativa
+npm run cli
 
 # Executar testes (não implementado)
 npm test
@@ -290,6 +378,27 @@ npm test
 - **IDs únicos:** Geração automática sequencial
 - **Busca case-insensitive:** Funciona com maiúsculas e minúsculas
 
+## 🚀 Melhorias Futuras
+
+### API
+- [ ] Implementar testes automatizados
+- [ ] Adicionar middleware de logging
+- [ ] Implementar paginação na listagem
+- [ ] Adicionar validação de schema (Joi/Yup)
+- [ ] Implementar rate limiting
+- [ ] Adicionar documentação Swagger/OpenAPI
+- [ ] Migrar para banco de dados real (MongoDB/PostgreSQL)
+- [ ] Implementar autenticação e autorização
+- [ ] Adicionar Docker para containerização
+
+### CLI
+- [ ] Adicionar cores no terminal (chalk)
+- [ ] Implementar exportação de relatórios
+- [ ] Adicionar modo batch para operações em lote
+- [ ] Implementar backup/restore do banco
+- [ ] Adicionar estatísticas e dashboards
+- [ ] Suporte a configurações personalizadas
+
 ## 🤝 Contribuição
 
 Este projeto foi desenvolvido como parte do processo seletivo da Aceleradora Ágil da PUCRS.
@@ -300,4 +409,4 @@ ISC License - veja o arquivo [package.json](package.json) para detalhes.
 
 ---
 
-**Desenvolvido  para a Aceleradora Ágil - PUCRS**
+**Desenvolvido com ❤️ para a Aceleradora Ágil - PUCRS**

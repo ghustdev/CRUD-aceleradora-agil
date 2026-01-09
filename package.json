@@ -1,0 +1,26 @@
+{
+  "name": "crud-aceleradora-agil",
+  "version": "1.0.0",
+  "description": "Desafio de construir um CRUD em JavaScript e Node para a 2° etapa do processo seletivo para o projeto da Aceleradora Ágil da PUCRS",
+  "homepage": "https://github.com/ghustdev/CRUD-aceleradora-agil#readme",
+  "bugs": {
+    "url": "https://github.com/ghustdev/CRUD-aceleradora-agil/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghustdev/CRUD-aceleradora-agil.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}

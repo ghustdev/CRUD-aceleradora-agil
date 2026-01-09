@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "nome": "Galaxy A56",
+    "categoria": "Tecnologia",
+    "quantidade": 20,
+    "preco": 1000
+  },
+  {
+    "id": "3",
+    "nome": "Mouse Gamer",
+    "categoria": "Perifericos",
+    "quantidade": 50,
+    "preco": 120
+  }
+]
